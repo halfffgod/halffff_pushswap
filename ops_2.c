@@ -14,12 +14,12 @@
 
 void	rr(t_list **a_list, t_list **b_list)
 {
-	ra_nd_rb(a_list);
-	ra_nd_rb(b_list);
+	ra_rb(a_list,3);
+	ra_rb(b_list,3);
 	write(1, "rr\n", 3);
 }
 
-void	rra_nd_rrb(t_list **list, int i)
+void	rra_rrb(t_list **list, int i)
 {
 	t_list	*adr;
 	t_list	*t1;
@@ -46,7 +46,7 @@ void	rra_nd_rrb(t_list **list, int i)
 
 void	rrr(t_list **a_list, t_list **b_list)
 {
-	rra_nd_rrb(a_list);
-	rra_nd_rrb(b_list);
+	rra_rrb(a_list,3);
+	rra_rrb(b_list,3);
 	write(1, "rrr\n", 4);
 }

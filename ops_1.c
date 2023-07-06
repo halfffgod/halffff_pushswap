@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sa_nd_sb(t_list **list, int i)
+void	sa_sb(t_list **list, int i)
 {
 	t_list	*first;
 	t_list	*second;
@@ -33,8 +33,8 @@ void	sa_nd_sb(t_list **list, int i)
 
 void	ss(t_list **a_list, t_list **b_list)
 {
-	sa_nd_sb(a_list);
-	sa_nd_sb(b_list);
+	sa_sb(a_list,3);
+	sa_sb(b_list,3);
 	write(1, "ss\n", 3);
 }
 
@@ -68,7 +68,7 @@ void	pb(t_list **list_a, t_list **list_b)
 	}
 }
 
-void	ra_nd_rb(t_list **list, int i)
+void	ra_rb(t_list **list, int i)
 {
 	t_list	*adr;
 	t_list	*node;

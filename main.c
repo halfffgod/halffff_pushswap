@@ -13,9 +13,9 @@
 #include "push_swap.h"
 #include <stdio.h>
 
-int	main(int argc, char **argv)
+void parsing(int argc, char **argv, t_list **a)
 {
-	int		i;
+    int		i;
 	char	*h;
 	char	**gh;
 	int		*igh;
@@ -40,11 +40,17 @@ int	main(int argc, char **argv)
 	igh = charp_to_int(gh);
 	check_sorting(igh, gh_len(gh));
 	check_doubles(igh, gh_len(gh));
-	i = 0;
-	while (i < gh_len(gh))
-	{
-		printf("%d ", igh[i]);
-		i++;
-	}
+	*a = array_to_list(igh, gh_len(gh));
+}
+
+int	main(int argc, char **argv)
+{
+	t_list	*a;
+	t_list	*b;
+
+	a = NULL;
+	b = NULL;
+	parsing (argc, argv, &a);
+	print_list(a);
 	return (0);
 }
