@@ -6,21 +6,20 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:26:00 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/02 17:26:07 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/06 16:00:25 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void parsing(int argc, char **argv, t_list **a)
+void	parsing(int argc, char **argv, t_list **a)
 {
-    int		i;
+	int		i;
 	char	*h;
 	char	**gh;
 	int		*igh;
 
-	h = NULL;
 	gh = NULL;
 	igh = NULL;
 	if (argc == 1)
@@ -51,6 +50,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	parsing (argc, argv, &a);
+	sort_three(&a);
 	print_list(a);
 	return (0);
 }

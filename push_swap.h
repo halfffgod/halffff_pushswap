@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:26:12 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/02 17:26:28 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/07 14:48:43 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ int		gh_len(char **gh);
 void	check_sorting(int *igh, int l);
 void	check_doubles(int *igh, int l);
 t_list	*create_node(int value, int index);
-void 	print_list(t_list *head);
+void	print_list(t_list *head);
 t_list	*array_to_list(int *arr, int size);
-
 
 //operations
 void	sa_sb(t_list **list, int i);
@@ -52,5 +51,7 @@ void	ra_rb(t_list **list, int i);
 void	rr(t_list **a_list, t_list **b_list);
 void	rra_rrb(t_list **list, int i);
 void	rrr(t_list **a_list, t_list **b_list);
+
+void	sort_three(t_list **a);
 
 #endif

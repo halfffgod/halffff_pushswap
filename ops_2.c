@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:00:57 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/04 14:01:12 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/06 16:14:10 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	rr(t_list **a_list, t_list **b_list)
 {
-	ra_rb(a_list,3);
-	ra_rb(b_list,3);
+	ra_rb(a_list, 3);
+	ra_rb(b_list, 3);
 	write(1, "rr\n", 3);
 }
 
@@ -46,7 +46,7 @@ void	rra_rrb(t_list **list, int i)
 
 void	rrr(t_list **a_list, t_list **b_list)
 {
-	rra_rrb(a_list,3);
-	rra_rrb(b_list,3);
+	rra_rrb(a_list, 3);
+	rra_rrb(b_list, 3);
 	write(1, "rrr\n", 4);
 }

@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 14:00:32 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/04 14:02:36 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/06 16:13:44 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	sa_sb(t_list **list, int i)
 
 void	ss(t_list **a_list, t_list **b_list)
 {
-	sa_sb(a_list,3);
-	sa_sb(b_list,3);
+	sa_sb(a_list, 3);
+	sa_sb(b_list, 3);
 	write(1, "ss\n", 3);
 }
 
