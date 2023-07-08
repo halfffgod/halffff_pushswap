@@ -40,6 +40,7 @@ void	parsing(int argc, char **argv, t_list **a)
 	check_sorting(igh, gh_len(gh));
 	check_doubles(igh, gh_len(gh));
 	*a = array_to_list(igh, gh_len(gh));
+	index_list(a, ft_lstsize(*a));
 }
 
 int	main(int argc, char **argv)
@@ -50,7 +51,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	parsing (argc, argv, &a);
-	sort_three(&a);
+	sorting(&a, &b, ft_lstsize(a));
 	print_list(a);
 	return (0);
 }

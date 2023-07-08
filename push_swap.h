@@ -30,6 +30,7 @@ char	*ft_strjoin(char const *s1, char const *s2);
 size_t	ft_strlen(const char *str);
 int		ft_atoi(const	char *str);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
+int		ft_lstsize(t_list *lst);
 
 //utils
 void	errors(void);
@@ -41,6 +42,7 @@ void	check_doubles(int *igh, int l);
 t_list	*create_node(int value, int index);
 void	print_list(t_list *head);
 t_list	*array_to_list(int *arr, int size);
+void	push_to_stack_a(t_list **a, t_list **b, int size);
 
 //operations
 void	sa_sb(t_list **list, int i);
@@ -52,6 +54,14 @@ void	rr(t_list **a_list, t_list **b_list);
 void	rra_rrb(t_list **list, int i);
 void	rrr(t_list **a_list, t_list **b_list);
 
+//sorting
+int		maximum(t_list **list);
+void	index_list(t_list **list, int len);
 void	sort_three(t_list **a);
+void	sort_four(t_list **a, t_list **b);
+void	sort_five(t_list **a, t_list **b);
+void	sorting(t_list **a, t_list **b, int size);
+void	butterfly(t_list **a, t_list **b, int n);
+
 
 #endif

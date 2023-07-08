@@ -65,5 +65,6 @@ t_list	*array_to_list(int *arr, int size)
 			lst = new_node;
 		}
 	}
+	//index_list(&a, size);
 	return (a);
 }

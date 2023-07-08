@@ -5,8 +5,12 @@ SRC =	main.c			\
 		utils_2.c		\
 		utils_3.c		\
 		ops_1.c			\
-		pops_2.c		\
-		move_to_list.c	
+		ops_2.c			\
+		move_to_list.c	\
+		sorting.c		\
+		max.c			\
+		indices.c		\
+		butterfly.c		
 
 
 OBJ = $(SRC:.c=.o)
