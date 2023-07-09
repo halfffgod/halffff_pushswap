@@ -32,25 +32,35 @@
 }*/
 
 
-int maximum(t_list **list)
+int	maximum(t_list **list)
 {
-	int     max;
-	t_list  *node;
-	int     idx;
+	int		i;
+	int		j;
+	int		max;
+	t_list	*node;
 
-    max = (*list)->index;
-    node = (*list)->next;
-    idx = 1;
-	while (node != NULL)
+	i = 0;
+	j = 0;
+	node = *list;
+	max = node->index;
+	node = node->next;
+	while (node)
 	{
-		if (node->index > max)
-			max = idx;
-		node = node->next;
-		idx++;
+		if (max < node->index)
+		{
+			max = node->index;
+			node = node->next;
+			j = ++i;
+		}
+		else
+		{
+			node = node->next;
+			i++;
+		}
 	}
-
-	return max;
+	return (j);
 }
+
 
 void	push_to_stack_a(t_list **a, t_list **b, int size)
 {

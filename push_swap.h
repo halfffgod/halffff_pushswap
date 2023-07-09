@@ -26,7 +26,7 @@ typedef struct s_list
 
 //libft functions
 char	**ft_split(char const *s, char c);
-char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strjoin(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 int		ft_atoi(const	char *str);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
@@ -43,6 +43,7 @@ t_list	*create_node(int value, int index);
 void	print_list(t_list *head);
 t_list	*array_to_list(int *arr, int size);
 void	push_to_stack_a(t_list **a, t_list **b, int size);
+void free_leaks(t_list *a);
 
 //operations
 void	sa_sb(t_list **list, int i);
@@ -56,7 +57,8 @@ void	rrr(t_list **a_list, t_list **b_list);
 
 //sorting
 int		maximum(t_list **list);
-void	index_list(t_list **list, int len);
+void	index_list(t_list **list);
+void	sort_two(t_list **a);
 void	sort_three(t_list **a);
 void	sort_four(t_list **a, t_list **b);
 void	sort_five(t_list **a, t_list **b);

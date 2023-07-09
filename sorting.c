@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	sort_three(t_list **a)
+/*void	sort_three(t_list **a)
 {
 	int	a1;
 	int	a2;
@@ -38,6 +38,31 @@ void	sort_three(t_list **a)
 	{
 		sa_sb(a, 1);
 		ra_rb(a, 1);
+	}
+}*/
+
+void	sort_two(t_list **a)
+{
+	if ((*a)->index > (*a)->next->index)
+		sa_sb(a, 1);
+}
+
+void	sort_three(t_list **a)
+{
+	int	i;
+
+	i = maximum(a);
+	if (i == 2)
+		sort_two(a);
+	if (i == 1)
+	{
+		rra_rrb(a, 1);
+		sort_two(a);
+	}
+	if (i == 0)
+	{
+		ra_rb(a, 1);
+		sort_two(a);
 	}
 }
 
@@ -90,7 +115,7 @@ void	sort_five(t_list **a, t_list **b)
 void	sorting(t_list **a, t_list **b, int size)
 {
 	if (size == 2)
-		sa_sb(a, 1);
+		sort_two(a);
 	else if (size == 3)
 		sort_three(a);
 	else if (size == 4)
@@ -112,4 +137,5 @@ void	sorting(t_list **a, t_list **b, int size)
 		butterfly(a, b, 40);
 		push_to_stack_a(a, b, size);
 	}
+	free_leaks(*a);
 }

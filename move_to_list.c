@@ -26,7 +26,7 @@ t_list	*create_node(int value, int index)
 	return (node);
 }
 
-void	print_list(t_list *head)
+/*void	print_list(t_list *head)
 {
 	t_list	*current;
 
@@ -37,7 +37,7 @@ void	print_list(t_list *head)
 		current = current->next;
 	}
 	printf("\n");
-}
+}*/
 
 t_list	*array_to_list(int *arr, int size)
 {
@@ -65,6 +65,6 @@ t_list	*array_to_list(int *arr, int size)
 			lst = new_node;
 		}
 	}
-	//index_list(&a, size);
+	//free_leaks(new_node);
 	return (a);
 }

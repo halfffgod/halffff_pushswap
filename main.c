@@ -31,6 +31,8 @@ void	parsing(int argc, char **argv, t_list **a)
 		while (i < argc)
 		{
 			h = ft_strjoin (h, argv[i]);
+			if (i != 2)
+				free(h);
 			i++;
 		}
 	}
@@ -40,7 +42,14 @@ void	parsing(int argc, char **argv, t_list **a)
 	check_sorting(igh, gh_len(gh));
 	check_doubles(igh, gh_len(gh));
 	*a = array_to_list(igh, gh_len(gh));
-	index_list(a, ft_lstsize(*a));
+	free (igh);
+	i = 0;
+	while(gh[i])
+	{
+		free(gh[i]);
+		i++;
+	}
+	free (gh);
 }
 
 int	main(int argc, char **argv)
@@ -51,7 +60,7 @@ int	main(int argc, char **argv)
 	a = NULL;
 	b = NULL;
 	parsing (argc, argv, &a);
+	index_list(&a);
 	sorting(&a, &b, ft_lstsize(a));
-	print_list(a);
 	return (0);
 }

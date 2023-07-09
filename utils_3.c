@@ -58,3 +58,15 @@ void	check_doubles(int *igh, int l)
 		i++;
 	}
 }
+
+void free_leaks(t_list *a)
+{
+	t_list *next;
+
+	while (a != NULL)
+	{
+		next = a->next;
+		free(a);
+		a = next;
+	}
+}

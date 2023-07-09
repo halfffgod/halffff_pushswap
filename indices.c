@@ -1,27 +1,62 @@
 #include "push_swap.h"
 
-void	index_list(t_list **list, int len)
+void	bubble_sort_array(int *a, int len)
 {
-	t_list	*node;
-	t_list	*max;
 	int		i;
+	int		j;
+	int		tmp;
 
 	i = 0;
-	node = (*list)->next;
-	max = *list;
 	while (i < len)
 	{
-		while (node != NULL)
+		j = 0;
+		while (j < len)
 		{
-			if (max->data > node->data && node->index == -1)
-				max = node;
-			node = node->next;
+			if (a[i] < a[j])
+			{
+				tmp = a[j];
+				a[j] = a[i];
+				a[i] = tmp;
+			}
+			j++;
 		}
-		max->index = i;
-		max = *list;
-		node = *list;
 		i++;
-		while (i < len && max->index != -1)
-			max = max->next;
 	}
+}
+
+void	fill_idx(t_list **a, int *arr, int len)
+{
+	int		i;
+
+	while (*a)
+	{
+		i = 0;
+		while ((*a)->data != arr[i] && i < len)
+			i++;
+		(*a)->index = i;
+		*a = (*a)->next;
+	}
+}
+
+void	index_list(t_list **a)
+{
+	int		i;
+	int		len;
+	int		*arr;
+	t_list	*lst;
+
+	i = 0;
+	lst = *a;
+	len = ft_lstsize(*a);
+	arr = malloc(len * sizeof(int));
+	while (*a && i < len)
+	{
+		arr[i++] = (*a)->data;
+		*a = (*a)->next;
+	}
+	*a = lst;
+	bubble_sort_array(arr, len);
+	fill_idx(a, arr, len);
+	*a = lst;
+	free (arr);
 }
