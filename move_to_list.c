@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/06 16:00:52 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/06 16:12:24 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/10 10:53:22 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ t_list	*create_node(int value, int index)
 	}
 	return (node);
 }
-
 /*void	print_list(t_list *head)
 {
 	t_list	*current;
@@ -65,6 +64,5 @@ t_list	*array_to_list(int *arr, int size)
 			lst = new_node;
 		}
 	}
-	//free_leaks(new_node);
 	return (a);
 }

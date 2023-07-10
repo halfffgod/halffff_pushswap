@@ -6,11 +6,29 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:26:35 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/02 17:18:17 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/10 08:09:17 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+char	*ft_strdup(const char *s1)
+{
+	char		*str;
+	size_t		i;
+
+	i = 0;
+	str = (char *)malloc(sizeof(*s1) * (ft_strlen((char *)s1) + 1));
+	if (!str)
+		return (0);
+	while (s1[i])
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	str[i] = 0;
+	return (str);
+}
 
 int	ft_lstsize(t_list *lst)
 {
@@ -59,9 +77,9 @@ void	check_doubles(int *igh, int l)
 	}
 }
 
-void free_leaks(t_list *a)
+void	free_leaks(t_list *a)
 {
-	t_list *next;
+	t_list	*next;
 
 	while (a != NULL)
 	{

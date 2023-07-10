@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:26:12 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/07 14:48:43 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/10 08:07:44 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ size_t	ft_strlen(const char *str);
 int		ft_atoi(const	char *str);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 int		ft_lstsize(t_list *lst);
+char	*ft_strdup(const char *s1);
 
 //utils
 void	errors(void);
@@ -43,7 +44,7 @@ t_list	*create_node(int value, int index);
 void	print_list(t_list *head);
 t_list	*array_to_list(int *arr, int size);
 void	push_to_stack_a(t_list **a, t_list **b, int size);
-void free_leaks(t_list *a);
+void	free_leaks(t_list *a);
 
 //operations
 void	sa_sb(t_list **list, int i);
@@ -64,6 +65,5 @@ void	sort_four(t_list **a, t_list **b);
 void	sort_five(t_list **a, t_list **b);
 void	sorting(t_list **a, t_list **b, int size);
 void	butterfly(t_list **a, t_list **b, int n);
-
 
 #endif
