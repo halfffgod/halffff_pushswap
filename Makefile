@@ -36,4 +36,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY: re, all, fclean, clean, libcomp 
+.PHONY: re, all, fclean, clean

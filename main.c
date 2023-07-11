@@ -48,9 +48,11 @@ void	parse_arguments(char *h, t_list **a)
 {
 	char	**gh;
 	int		*igh;
+	int		i;
 
 	gh = NULL;
 	igh = NULL;
+	i = 0;
 	check(h);
 	gh = ft_split(h, ' ');
 	igh = charp_to_int(gh);
