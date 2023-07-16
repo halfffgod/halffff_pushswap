@@ -1,28 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   bonus_ops2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/02 16:26:00 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/10 11:20:30 by nbadalia         ###   ########.fr       */
+/*   Created: 2023/07/13 17:05:44 by nbadalia          #+#    #+#             */
+/*   Updated: 2023/07/13 17:05:46 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "bonus.h"
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	rr_b(t_list **a_list, t_list **b_list)
 {
-	t_list	*a;
-	t_list	*b;
+	ra_rb_b(a_list);
+	ra_rb_b(b_list);
+}
 
-	a = NULL;
-	b = NULL;
-	parsing(argc, argv, &a);
-	index_list(&a);
-	sorting(&a, &b, ft_lstsize(a));
-	free_leaks(a);
-	return (0);
+void	rra_rrb_b(t_list **list)
+{
+	t_list	*adr;
+	t_list	*t1;
+	t_list	*t2;
+
+	if (*list)
+	{
+		adr = *list;
+		t1 = *list;
+		while (adr->next != NULL)
+		{
+			t2 = adr;
+			adr = adr->next;
+		}
+		t2->next = NULL;
+		adr->next = t1;
+		*list = adr;
+	}
+}
+
+void	rrr_b(t_list **a_list, t_list **b_list)
+{
+	rra_rrb_b(a_list);
+	rra_rrb_b(b_list);
 }

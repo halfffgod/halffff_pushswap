@@ -1,4 +1,6 @@
 NAME = push_swap
+B_NAME = checker
+FLAGS = -Wall -Wextra -Werror
 
 SRC =	main.c			\
 		utils_1.c		\
@@ -10,30 +12,47 @@ SRC =	main.c			\
 		sorting.c		\
 		max.c			\
 		indices.c		\
-		butterfly.c		
+		butterfly.c		\
+		parsing.c	
+
+SRC_B = utils_1.c								\
+		utils_2.c								\
+		utils_3.c								\
+		ops_1.c 								\
+		ops_2.c									\
+		move_to_list.c							\
+		indices.c								\
+		parsing.c								\
+		bonus_checker.c							\
+		bonus_utils.c							\
+		bonus_ops1.c							\
+		bonus_ops2.c							\
+		get_next_line.c							\
+		get_next_line_utils.c 
 
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(patsubst %.c, %.o, $(SRC))
+OBJ_B = $(patsubst %.c, %.o, $(SRC_B))
 
-RM = rm -rf
+all : $(NAME)
 
-CC = gcc
+$(NAME) : $(OBJ) Makefile push_swap.h
+	@gcc $(FLAGS) $(OBJ) -o $(NAME)
 
-CFLAGS = -Wall -Werror -Wextra 
+bonus : $(B_NAME) 
 
-$(NAME) : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(B_NAME) : $(OBJ_B) Makefile bonus.h
+	@gcc $(FLAGS) $(OBJ_B) -o $(B_NAME)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@gcc $(FLAGS) -c $< -o $@
 
-clean :
-	$(RM) $(OBJ) 
-
+clean : 
+	@rm -rf $(OBJ) $(OBJ_B)
 
 fclean : clean
-	$(RM) $(NAME)
+	@rm -rf $(NAME) $(B_NAME)
 
-re : fclean all
+re : fclean $(NAME) $(B_NAME)
 
-.PHONY: re, all, fclean, clean
+.PHONY : re fclean clean all bonus

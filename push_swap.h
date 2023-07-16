@@ -45,6 +45,7 @@ void	print_list(t_list *head);
 t_list	*array_to_list(int *arr, int size);
 void	push_to_stack_a(t_list **a, t_list **b, int size);
 void	free_leaks(t_list *a);
+void	parsing(int argc, char **argv, t_list **a);
 
 //operations
 void	sa_sb(t_list **list, int i);
