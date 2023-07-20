@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:01:39 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/13 17:04:49 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/18 18:47:01 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	get_ops(char *op, t_list **a, t_list **b)
 	if (ft_strcmp(op, "sa\n") == 0)
 		sa_sb_b(a);
 	else if (ft_strcmp(op, "sb\n") == 0)
-		sa_sb_b(a);
+		sa_sb_b(b);
 	else if (ft_strcmp(op, "ss\n") == 0)
 		ss_b(a, b);
 	else if (ft_strcmp(op, "pa\n") == 0)
@@ -27,13 +27,13 @@ void	get_ops(char *op, t_list **a, t_list **b)
 	else if (ft_strcmp(op, "ra\n") == 0)
 		ra_rb_b(a);
 	else if (ft_strcmp(op, "rb\n") == 0)
-		ra_rb_b(a);
+		ra_rb_b(b);
 	else if (ft_strcmp(op, "rr\n") == 0)
 		rr_b(a, b);
 	else if (ft_strcmp(op, "rra\n") == 0)
 		rra_rrb_b(a);
 	else if (ft_strcmp(op, "rrb\n") == 0)
-		rra_rrb_b(a);
+		rra_rrb_b(b);
 	else if (ft_strcmp(op, "rrr\n") == 0)
 		rrr_b(a, b);
 	else
@@ -52,12 +52,10 @@ int	main(int argc, char **argv)
 {
 	t_list	*a;
 	t_list	*b;
-	char	**elem;
 	char	*ops;
 
-	a = NULL;
+	a = malloc(sizeof(t_list));
 	b = NULL;
-	elem = NULL;
 	if (argc < 2)
 		return (0);
 	check_argv(argv);

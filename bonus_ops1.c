@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 17:04:57 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/13 17:04:59 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/18 19:01:04 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ void	ra_rb_b(t_list **list)
 	t_list	*adr;
 	t_list	*node;
 
-	adr = NULL;
-	node = NULL;
+	adr = *list;
+	node = *list;
 	if ((*list)->next != NULL)
 	{
 		adr = *list;

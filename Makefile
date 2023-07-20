@@ -1,6 +1,6 @@
 NAME = push_swap
 B_NAME = checker
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
 
 SRC =	main.c			\
 		utils_1.c		\

@@ -6,7 +6,7 @@
 /*   By: nbadalia <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 16:26:20 by nbadalia          #+#    #+#             */
-/*   Updated: 2023/07/10 08:08:29 by nbadalia         ###   ########.fr       */
+/*   Updated: 2023/07/20 15:44:20 by nbadalia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,11 +102,11 @@ size_t	ft_strlen(const char *str)
 	return (i);
 }
 
-int	ft_atoi(const	char *str)
+long long	ft_atoi(const	char *str)
 {
-	int	n;
-	int	sign;
-	int	i;
+	long long	n;
+	int			sign;
+	int			i;
 
 	n = 0;
 	i = 0;

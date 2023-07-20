@@ -28,4 +28,5 @@ void	ra_rb_b(t_list **list);
 void	rr_b(t_list **a_list, t_list **b_list);
 void	rra_rrb_b(t_list **list);
 void	rrr_b(t_list **a_list, t_list **b_list);
+
 #endif
